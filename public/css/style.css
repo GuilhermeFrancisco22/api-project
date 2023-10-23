@@ -23,5 +23,19 @@
 }
 
 .card {
-  width: calc(70% / 3);
+  width: clamp(180px, 23%, 300px);
+  height: 100%;
+}
+
+.card > img {
+  width: 50%;
+}
+
+.accordion-body {
+  padding: 0;
+}
+
+
+.buy{
+  background: var(--colorPadrao);
 }

@@ -2,9 +2,8 @@ const main = document.getElementById("main");
 const navMenu = document.getElementById("nav-menu");
 const sectionBanner = document.getElementById("section-banner");
 
-// Função para carregar as categorias
 function fetchCategories() {
-    main.innerHTML = ""; // Limpa o conteúdo principal
+    main.innerHTML = "";
 
     fetch('https://fakestoreapi.com/products/categories')
         .then(res => res.json())
@@ -12,7 +11,6 @@ function fetchCategories() {
         .catch(function (e) { console.log("Deu Erro!", e) });
 }
 
-// Função para exibir as categorias
 function displayCategories(jsonDados) {
     navMenu.innerHTML = '';
     for (const category of jsonDados) {
@@ -32,10 +30,8 @@ function displayCategories(jsonDados) {
     }
 }
 
-
-// Função para carregar os produtos de uma categoria
 function fetchCategoryProducts(category) {
-    main.innerHTML = ""; // Limpa o conteúdo principal
+    main.innerHTML = "";
 
     fetch(`https://fakestoreapi.com/products/category/${category}`)
         .then(res => res.json())
@@ -43,17 +39,13 @@ function fetchCategoryProducts(category) {
         .catch(function (e) { console.log("Deu Erro!", e) });
 }
 
-// Função para exibir os produtos de uma categoria
 function displayCategoryProducts(products, category) {
     main.innerHTML = "";
 
-    const backButton = document.createElement('button');
-    backButton.textContent = "Voltar";
+    const backButton = document.querySelector(".home")
     backButton.addEventListener('click', function () {
-        fetchCategories(); // Retorna à lista de categorias
-        backButton.style.display = "none"
+        fetchCards(); // Retorna à lista de categorias
     });
-    sectionBanner.appendChild(backButton);
 
     products.forEach(product => {
         const productCard = document.createElement('div');
@@ -74,51 +66,61 @@ function displayCategoryProducts(products, category) {
     });
 }
 
-// Chame a função para carregar as categorias iniciais
-fetchCategories();
+fetchCategories();// ...
 
-fetch('https://fakestoreapi.com/products')
-    .then(res => res.json())
-    .then(json => fetchCards(json))
-    .catch(function (e) { console.log("Deu Erro!", e) });
+function fetchCards() {
+  main.innerHTML = "";
+  fetch('https://fakestoreapi.com/products')
+      .then(res => res.json())
+      .then(json => displayCards(json))
+      .catch(function (e) { console.log("Deu Erro!", e) });
+}
 
-function fetchCards(cards) {
-    for (const element of cards) {
-        main.innerHTML += `
-        <div class="card">
-        <img class="card-img-top" src="${element.image}" alt="Card image" />
-        <div class="card-body">
-          <h4 class="card-title">${element.title}</h4>
-          <p class="card-text">${element.price}</p>
-          <div class="accordion accordion-flush">
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseOne"
-                  aria-expanded="false"
-                  aria-controls="flush-collapseOne"
-                >
-                  description
-                </button>
-              </h2>
-              <div
-                id="flush-collapseOne"
-                class="accordion-collapse collapse"
-                data-bs-parent="#accordionFlushExample"
+function displayCards(cards) {
+  for (const element of cards) {
+      main.innerHTML += `
+      <div class="card d-flex flex-wrap align-items-center">
+      <img class="card-img" src="${element.image}" alt="Card image" />
+      <div class="card-body">
+        <h4 class="card-title">${element.title}</h4>
+        <p class="card-text">${element.price}</p>
+        <div class="accordion accordion-flush">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapse${element.id}"
+                aria-expanded="false"
+                aria-controls="flush-collapse${element.id}"
               >
-                <div class="accordion-body">
-                <p class="card-subtitle">${element.description}</p>
-                <p class="card-text">${element.category}</p>
-                </div>
+                description
+              </button>
+            </h2>
+            <div
+              id="flush-collapse${element.id}"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+              <p class="card-subtitle">${element.description}</p>
               </div>
             </div>
           </div>
-          <a href="#" class="btn btn-primary">buy</a>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+        <a href="#" class="btn btn-outline-light buy">buy</a>
         </div>
       </div>
-            `
-    }
+    </div>
+          `
+  }
 }
+
+// Chame a função para carregar todos os cards ao carregar a página
+fetchCards();
+
+// Chame a função para carregar as categorias ao carregar a página
+fetchCategories();
+
