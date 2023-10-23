@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,13 +8,19 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../public/css/style.css" />
   </head>
   <body>
-    <header class="sticky-top">
-      <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+    <header class="sticky-top headerHome">
+      <nav class="navbar navbar-dark navbar-expand-lg">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Offcanvas dark navbar</a>
+          <a class="navbar-brand" href="#"
+            ><img
+              src="../public/icons/favicon.ico"
+              alt="icon-store"
+              id="fav-icon"
+            />FakeStoreApi</a
+          >
           <button
             class="navbar-toggler"
             type="button"
@@ -32,9 +38,6 @@
             aria-labelledby="offcanvasDarkNavbarLabel"
           >
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
-                Dark offcanvas
-              </h5>
               <button
                 type="button"
                 class="btn-close btn-close-white"
@@ -43,7 +46,9 @@
               ></button>
             </div>
             <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end align-content-center flex-wrap flex-grow-1 pe-3">
+              <ul
+                class="navbar-nav justify-content-end flex-wrap flex-grow-1 pe-3"
+              >
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#"
                     >Home</a
@@ -60,36 +65,102 @@
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Dropdown
+                    Categories
                   </a>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li>
-                      <hr class="dropdown-divider" />
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
+                  <ul
+                    class="dropdown-menu dropdown-menu-dark"
+                    id="nav-menu"
+                  ></ul>
                 </li>
               </ul>
-              <form class="d-flex mt-3" role="search">
+              <form class="d-flex" role="search">
                 <input
                   class="form-control me-2"
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
                 />
-                <button class="btn btn-success" type="submit">Search</button>
+                <button class="btn btn-outline-light" type="submit">
+                  Search
+                </button>
               </form>
             </div>
           </div>
         </div>
       </nav>
     </header>
+
+    <section id="section-banner">
+      <div
+        id="carouselExampleAutoplaying"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="../public/img/banner-blackfriday.png"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../public/img/banner-promo1.png"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../public/img/banner-promo2.png"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
 
     <main
       id="main"
@@ -99,3 +170,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
+
+

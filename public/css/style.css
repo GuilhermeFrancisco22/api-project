@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --colorPadrao: #802c6e;
+}
+
+.headerHome > nav {
+  height: 4.375rem;
+  background: var(--colorPadrao);
+}
+
+/* #fav-icon:hover {
+  transition: .6s;
+  transform: rotate(15deg);
+} */
+
+.form-control {
+  padding: 0 0 0 0.7rem;
+}
+
+.card {
+  width: calc(70% / 3);
+}
