@@ -80,7 +80,8 @@ function displayCards(cards) {
   for (const element of cards) {
       main.innerHTML += `
       <div class="card d-flex flex-wrap align-items-center">
-      <img class="card-img" src="${element.image}" alt="Card image" />
+      <img class="card-img" src="${element.image}" alt="${element.title
+      }" />
       <div class="card-body">
         <h4 class="card-title">${element.title}</h4>
         <p class="card-text">${element.price}</p>
