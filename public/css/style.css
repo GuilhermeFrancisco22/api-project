@@ -1,3 +1,6 @@
+@import url("../css/bestProduct.css");
+@import url("../css/categories.css");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,12 +8,13 @@
 }
 
 :root {
-  --colorPadrao: #802c6e;
+  --colorPurple: #802c6e;
 }
 
 .headerHome > nav {
   height: 4.375rem;
-  background: var(--colorPadrao);
+  background: var(--colorPurple);
+  box-shadow: 0px 5px 10px 2px;
 }
 
 /* #fav-icon:hover {
@@ -18,14 +22,28 @@
   transform: rotate(15deg);
 } */
 
+/* #carousel-auto{
+  opacity: .7;
+} */
+
+.color-control {
+  background: #000;
+  padding: 5px 0 0;
+  border-radius: 5px;
+}
+
+.btn-controler-opacity {
+  opacity: 1;
+}
+
 .form-control {
   padding: 0 0 0 0.7rem;
 }
 
-.card {
+/* .card {
   width: clamp(180px, 23%, 300px);
   height: 100%;
-}
+} */
 
 .card > img {
   width: 50%;
@@ -35,7 +53,6 @@
   padding: 0;
 }
 
-.buy{
-  background: var(--colorPadrao);
+.buy {
+  background: var(--colorPurple);
 }
-

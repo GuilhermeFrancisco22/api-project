@@ -1,0 +1,12 @@
+:root {
+  --colorWhie: #f5f5f5;
+}
+
+.section-categories {
+  height: 900px;
+}
+
+.card-categories{
+    width: 75%;
+    height: 300px;
+}
