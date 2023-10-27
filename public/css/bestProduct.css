@@ -1,23 +1,22 @@
 :root {
   --colorPurple: #802c6e;
-  --colorWhie: #f8f8f8;
+  --backgroundWhite: #fff;
+  --colorWhite: #f8f8f8;
   --shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
 }
 
-.section-best-product {
+.section-best-product{
+  padding: 5%;
+  background: var(--colorWhite);
+}
+
+.section-best-product > div {
   height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   flex-wrap: nowrap;
-  background: var(--colorWhie);
-}
-
-.card-categories {
-	width: 300px;
-	height: 300px;
-  box-shadow: var(--shadow);
 }
 
 .card-produts {
@@ -26,7 +25,6 @@
   height: 380px;
   display: flex;
   overflow: hidden;
-  box-shadow: var(--shadow);
   transition: 0.5s ease-in-out;
 }
 
@@ -38,7 +36,7 @@
   position: relative;
   min-width: 300px;
   height: 100%;
-  background: var(--colorWhie);
+  background: var(--backgroundWhite);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,10 +47,6 @@
   max-width: 200px;
   transition: 0.5s ease-in-out;
 }
-/* 
-.card-produts:hover .imgBx img {
-  transform: rotate(-35deg) translateX(-20px);
-} */
 
 .card-produts .details {
   position: absolute;
@@ -79,12 +73,12 @@
   height: 0;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-left: 10px solid var(--colorWhie);
+  border-left: 10px solid var(--colorWhite);
   z-index: 1;
 }
 
 .card-produts .details h3 {
-  color: var(--colorWhie);
+  color: var(--colorWhite);
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.5em;
@@ -99,7 +93,7 @@
 }
 
 .card-produts .details h4 {
-  color: var(--colorWhie);
+  color: var(--colorWhite);
   text-transform: uppercase;
   font-weight: 600;
   font-size: 0.9em;
@@ -109,36 +103,10 @@
 }
 
 .details P {
-  color: var(--colorWhie);
+  color: var(--colorWhite);
   font-size: 0.8em;
   opacity: 0.85;
 }
-
-/* .size {
-  display: flex;
-  gap: 10px;
-}
-
-.size li {
-  list-style: none;
-  color: var(--colorWhie);
-  font-size: 0.9em;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid var(--colorWhie);
-  cursor: pointer;
-  font-weight: 500;
-  opacity: 0.5;
-}
-
-.size li:hover {
-  background: var(--colorWhie);
-  color: #4ba9e9;
-  opacity: 1;
-} */
 
 .group {
   position: relative;
@@ -149,7 +117,7 @@
 }
 
 .card-produts .details h2 {
-  color: var(--colorWhie);
+  color: var(--colorWhite);
   text-transform: uppercase;
   font-weight: 600;
   font-size: 2em;
