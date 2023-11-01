@@ -167,9 +167,7 @@
     background: #0088cc;
     color: #ffffff;
   }
-}
 
-@media (max-width: 768px) {
   .tooltip {
     display: none;
   }
