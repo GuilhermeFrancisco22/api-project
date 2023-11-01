@@ -170,8 +170,8 @@ function generateCardHTML(element) {
       <div class="modal-body card">
           <img class="card-img mx-auto" src="${element.image}" alt="${element.title}" />
             <h4 class="card-title">${element.title}</h4>
-            <p class="card-text">${element.price}</p>
-            <p class="card-subtitle">$${element.description}</p>
+            <p class="card-text">$${element.price}</p>
+            <p class="card-subtitle">${element.description}</p>
             <a href="#" class="btn btn-outline-light buy">buy</a>
         </div>
       </div>
@@ -179,21 +179,22 @@ function generateCardHTML(element) {
   </div>
 </div>
 
-<div class="col">
-  <div class="card h-100"> 
-    <img src="${element.image}" class="card-img-top mx-auto" alt="${element.title}">
+<div class="col-md-3 col-sm-6 col-12">
+  <div class="card h-100 align-items-center">
+    <img src="${element.image}" class="card-img-top img-fluid" alt="${element.title}">
     <div class="card-body">
       <h5 class="card-title">${element.title}</h5>
       <p class="card-text">$${element.price}</p>
     </div>
     <div class="card-footer">
       <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModa${element.id}">
-      more info
+        more info
       </button>
       <button class="btn btn-outline-dark buy">Buy</button>
     </div>
   </div>
 </div>
+
 `
 }
 
@@ -228,6 +229,38 @@ function fetchUserLogin(user) {
     .then(json => console.log(json))
     .catch(error => console.error('Erro:', error));
 }
+
+document.querySelector('.facebook').addEventListener('click', function () {
+  window.open('https://www.facebook.com/?locale=pt_BR', '_blank');
+});
+document.querySelector('.twitter').addEventListener('click', function () {
+  window.open('https://twitter.com/login?lang=pt', '_blank');
+});
+document.querySelector('.instagram').addEventListener('click', function () {
+  window.open('https://www.instagram.com/', '_blank');
+});
+document.querySelector('.github').addEventListener('click', function () {
+  window.open('https://github.com/GuilhermeFrancisco22/api-project', '_blank');
+});
+document.querySelector('.telegram').addEventListener('click', function () {
+  window.open('https://web.telegram.org/', '_blank');
+});
+
+function verificarMediaQuery(mq) {
+  if (mq.matches) {
+    main.classList.remove('row-cols-md-4');
+    main.classList.add('row-cols-md-2');
+  } else {
+    main.classList.remove('row-cols-md-2');
+    main.classList.add('row-cols-md-4');
+  }
+}
+
+let mediaQuery990 = window.matchMedia('(max-width: 990px)'); // Defina a media query conforme necessário
+
+verificarMediaQuery(mediaQuery990); // Verifique a condição inicial
+
+mediaQuery990.addListener(verificarMediaQuery); // Adicione um ouvinte para atualizações de media query
 
 imgParterns()
 

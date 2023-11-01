@@ -19,6 +19,15 @@
   box-shadow: 0px 5px 10px 2px;
 }
 
+.login {
+  display: none;
+  margin-top: 40px;
+}
+
+.social-icon-mobile {
+  display: none;
+}
+
 .color-control {
   background: #000;
   padding: 5px 0 0;
@@ -41,6 +50,11 @@
   width: 50%;
 }
 
+.card:hover {
+  transition: 0.6s;
+  border: 1px var(--colorPurple) solid;
+}
+
 .accordion-body {
   padding: 0;
 }
@@ -52,10 +66,17 @@
 
 .partners-imgs {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
 .alert-fixed-top {
   padding-top: 70px;
   z-index: 2000;
+}
+
+@media (max-width: 990px) {
+  .partners-imgs > img {
+    margin: 1.75%;
+  }
 }

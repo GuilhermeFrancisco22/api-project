@@ -19,6 +19,7 @@
 .wrapper {
   display: inline-flex;
   list-style: none;
+  flex-wrap: wrap;
   padding: 0;
 }
 
@@ -111,4 +112,81 @@
 .wrapper .telegram:hover .tooltip::before {
   background: #0088cc;
   color: #ffffff;
+}
+
+@media (max-width: 990px) {
+  .login {
+    display: block !important;
+  }
+
+  .social-icon-mobile {
+    display: block !important;
+    margin-top: 40px;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .wrapper .icon {
+    margin: 0;
+  }
+
+  .wrapper .facebook,
+  .wrapper .facebook .tooltip,
+  .wrapper .facebook .tooltip::before {
+    background: #1877f2;
+    color: #ffffff;
+  }
+
+  .wrapper .twitter,
+  .wrapper .twitter .tooltip,
+  .wrapper .twitter .tooltip::before {
+    background: #222222;
+    color: #ffffff;
+  }
+
+  .wrapper .instagram,
+  .wrapper .instagram .tooltip,
+  .wrapper .instagram .tooltip::before {
+    background: #e4405f;
+    color: #ffffff;
+  }
+
+  .wrapper .github,
+  .wrapper .github .tooltip,
+  .wrapper .github .tooltip::before {
+    background: #833ab4;
+    color: #ffffff;
+  }
+
+  .wrapper .telegram,
+  .wrapper .telegram .tooltip,
+  .wrapper .telegram .tooltip::before {
+    background: #0088cc;
+    color: #ffffff;
+  }
+}
+
+@media (max-width: 768px) {
+  .tooltip {
+    display: none;
+  }
+
+  .social-icon-desktop {
+    display: none;
+  }
+  .categories-desktop {
+    display: none;
+  }
+
+  .login-desktop {
+    display: none;
+  }
+
+  .footer-desktop {
+    text-align: center;
+    justify-content: center !important;
+  }
 }
